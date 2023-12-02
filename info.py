@@ -18,9 +18,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('23709433', ''))
-API_HASH = environ.get('862baac6f1ba7b3c090ca5f86ef55f7c', '')
-BOT_TOKEN = environ.get('6883253335:AAE2sv_9YU_2hGphOpjZc2Tj-eC-yVxrepc', '')
+API_ID = int(environ.get('API_ID', '23709433'))
+API_HASH = environ.get('API_HASH', '862baac6f1ba7b3c090ca5f86ef55f7c')
+BOT_TOKEN = environ.get('BOT_TOKEN', '6883281957:AAFwA7R7ULuVnbSvZhy4hFUYav0FcKNOepM')
 PORT = environ.get("PORT", "8080")
 
 # Bot settings
@@ -29,16 +29,16 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 BOT_START_TIME = time()
 
 # Bot images & videos
-PICS = (environ.get('PICS', 'https://telegra.ph/file/5553dc39f968b364d4856.jpg')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/50ac512d96fd08ca83817.jpg')).split()
 REQ_PICS = (environ.get('REQ_PICS', 'https://graph.org/file/5cb80fa6096997b7226b3.jpg')).split()
 NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/0593a3103ba1b9a5855bf.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://graph.org/file/72dff2b65352ba85d0a34.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/2a888a370f479f4338f7c.jpg")
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('5898561883', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5898561883').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('-1001955187526', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('5898561883', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('auth_users', '5898561883').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
